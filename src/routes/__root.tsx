@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
+const SITE = "https://www.baucua5play.online/";
 const APP_NAME = "Bầu Cua Tôm Cá | Bau Cua";
 const APP_DESC =
   "Bau cua, bau cua tom ca. Chơi bầu cua tôm cá trên bàn gỗ, tự bấm hoặc tự xóc. Bau cua 2027, bau cua 2028, bau cua 2029, bau cua 2030. Trò chơi mô phỏng, không đặt cược tiền thật.";
@@ -16,6 +17,7 @@ export const Route = createRootRoute({
       { name: "description", content: APP_DESC },
       { name: "keywords", content: "bau cua, bau cua tom ca, bau cua 2027, bau cua 2028, bau cua 2029, bau cua 2030, bầu cua, bầu cua tôm cá" },
       { name: "robots", content: "index, follow" },
+      { property: "og:url", content: SITE },
       { property: "og:title", content: APP_NAME },
       { property: "og:description", content: APP_DESC },
       { property: "og:type", content: "website" },
@@ -25,7 +27,9 @@ export const Route = createRootRoute({
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
     ],
     links: [
+      { rel: "canonical", href: SITE },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -37,18 +41,3 @@ export const Route = createRootRoute({
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
     ],
   }),
-  component: () => (
-    <html lang="vi" suppressHydrationWarning>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <PreviewHostBridge />
-        <AuthProvider>
-          <Outlet />
-        </AuthProvider>
-        <Scripts />
-      </body>
-    </html>
-  ),
-});
