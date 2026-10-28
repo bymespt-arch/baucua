@@ -17,6 +17,7 @@ export const Route = createRootRoute({
       { name: "description", content: APP_DESC },
       { name: "keywords", content: "bau cua, bau cua tom ca, bau cua 2027, bau cua 2028, bau cua 2029, bau cua 2030, bầu cua, bầu cua tôm cá" },
       { name: "robots", content: "index, follow" },
+      { name: "google-site-verification", content: "ty2Ng2reRA2Yr3gpQMKMpvn-EGRqYkYH7nJUXKzVwo4" },
       { property: "og:url", content: SITE },
       { property: "og:title", content: APP_NAME },
       { property: "og:description", content: APP_DESC },
